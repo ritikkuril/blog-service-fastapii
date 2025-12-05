@@ -3,8 +3,22 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+blog-fast-api/
+__pycache__/
+*.pyc
+.env
+
+fastapi-env
+.DS_Store
 # C extensions
 *.so
+
+_pycache__/
+*.pyc
+.venv/
+env/
+data/
+.env
 
 # Distribution / packaging
 .Python
