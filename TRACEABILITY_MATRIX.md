@@ -1,5 +1,5 @@
 # Requirements Traceability Matrix (RTM)  
-**Project**: Blog Service API (FastAPI + PostgreSQL/SQLite)  
+**Project**: Blog Service API (FastAPI + SQLite)  
 **Version**: 1.0  
 **Last Updated**: 2025-12-06
 
