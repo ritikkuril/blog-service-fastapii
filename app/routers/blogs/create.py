@@ -6,6 +6,7 @@ from app.database import get_db
 
 router = APIRouter()
 
+router = APIRouter(prefix="/blogs", tags=["Blogs"])
 
 @router.post("/", response_model=schemas.BlogOut)
 def create_blog(blog: schemas.BlogCreate, db: Session = Depends(get_db)):
