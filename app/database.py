@@ -12,3 +12,17 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
+def get_db():
+    db = None
+    try:
+        print("[INFO] Creating new database session...")
+        db = SessionLocal()
+        yield db
+    except Exception as e:
+        print(f"[ERROR] Failed to create database session: {e}")
+        raise e
+    finally:
+        if db:
+            db.close()
+            print("[INFO] Database session closed.")
