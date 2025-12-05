@@ -6,7 +6,7 @@ A modern FastAPI application with automatic interactive documentation (Swagger U
 
 ```bash
 # 1. Clone the project (if using git)
-git clone https://github.com/yourusername/your-repo-name.git
+git clone  https://github.com/ritikkuril/blog-service-fastapii
 cd your-repo-name
 
 # 2. Create virtual environment
