@@ -27,6 +27,6 @@
 - **Framework**: FastAPI
 - **Testing**: pytest + httpx (tests located in `/tests/`)
 - **Auth**: JWT (PyJWT) + OAuth2PasswordBearer
-- **Database**: SQLAlchemy 2.0 + SQLite (dev) / PostgreSQL-ready
+- **Database**: SQLAlchemy 2.0 + SQLite (dev) 
 
-This traceability matrix proves you follow proper software engineering practices — perfect for Amazon, Google, Microsoft, or any FAANG-level interview.
+
