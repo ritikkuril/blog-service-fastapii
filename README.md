@@ -47,6 +47,18 @@ Project Structure
 | `/blogs/update/{id}` | PUT    | Update a blog     |
 | `/blogs/delete/{id}` | DELETE | Delete a blog     |
 
+
+
+
+[![Traceability Matrix](https://img.shields.io/badge/Traceability-100%25_Covered-success?style=for-the-badge)](TRACEABILITY_MATRIX.md)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-00bf7b?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)](https://python.org)
+
+A production-ready blog backend with full authentication, ownership control, pagination, and **100% requirement traceability**.
+
+**Live Swagger UI**: http://localhost:8000/docs  
+**Traceability Matrix** → [TRACEABILITY_MATRIX.md](TRACEABILITY_MATRIX.md)
+
 Project ScreenShots---------------------------------------
 Register----------
 <img width="1492" height="692" alt="image" src="https://github.com/user-attachments/assets/ee630358-8f67-406d-85d4-7c27fe9b5fec" />
