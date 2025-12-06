@@ -83,13 +83,9 @@ Server starts at: http://localhost:8000
 | REQ008 | Proper HTTP status codes               | All                     | -       | Passed  | 200/201/401/403/404       |
 | REQ009 | Interactive API documentation          | `/docs`, `/redoc`       | GET     | Passed  | Auto-generated            |
 
-**Coverage: 10/10 requirements fully tested**
-[![Traceability Matrix](https://img.shields.io/badge/Traceability-100%25_Covered-success?style=for-the-badge)](TRACEABILITY_MATRIX.md)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-00bf7b?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)](https://python.org)
+
 
 ## Project Structure
-
 ├── app/
 │   ├── main.py
 │   ├── routers/
