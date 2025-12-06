@@ -2,17 +2,20 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app import models, schemas
-
-router = APIRouter()
+from app.logger import logger  # <-- use logger
 
 router = APIRouter(prefix="/blogs", tags=["Blogs"])
 
+
 @router.put("/{id}", response_model=schemas.BlogOut)
 def update_blog(id: int, blog: schemas.BlogCreate, db: Session = Depends(get_db)):
+    logger.info(f"✏️ Attempting to update blog | id={id}")
+
     try:
         blog_data = db.query(models.Blog).filter(models.Blog.id == id).first()
+
         if not blog_data:
-            print(f"[WARN] Blog with ID={id} not found for update")
+            logger.warning(f"⚠️ Blog not found for update | id={id}")
             raise HTTPException(status_code=404, detail="Blog not found")
 
         blog_data.title = blog.title
@@ -20,9 +23,10 @@ def update_blog(id: int, blog: schemas.BlogCreate, db: Session = Depends(get_db)
         db.commit()
         db.refresh(blog_data)
 
-        print(f"[INFO] Updated blog with ID={id}")
+        logger.info(f"✅ Blog updated successfully | id={id}")
         return blog_data
+
     except Exception as e:
         db.rollback()
-        print(f"[ERROR] Failed to update blog ID={id}: {e}")
-        raise e
+        logger.exception(f"🔥 Failed to update blog | id={id} | error={e}")
+        raise

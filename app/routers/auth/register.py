@@ -5,20 +5,29 @@ from app.database import get_db
 from app import schemas
 from app.routers.auth.service import create_user, authenticate_user
 from app.routers.auth.token import create_access_token
+from app.logger import logger  # <-- use logger
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
+
 @router.post("/register")
 def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    logger.info("➡️ /auth/register endpoint called")
+    logger.info(f"Register attempt | email={user.email}")
+
     try:
-        print("[ROUTE] /auth/register hit")
         created_user = create_user(user, db)
-        print(f"[ROUTE] User registered: {created_user.email}")
+
+        logger.info(f"✅ User registered successfully | email={created_user.email}")
+
         return {"message": "User registered successfully"}
 
-    except HTTPException:
-        # re-raise HTTP exceptions so FastAPI handles them properly
+    except HTTPException as http_error:
+        logger.warning(
+            f"⚠️ HTTPException during registration | email={user.email} | detail={http_error.detail}"
+        )
         raise
+
     except Exception as e:
-        print(f"[ROUTE ERROR] Failed to register user: {e}")
+        logger.exception(f"🔥 Unexpected error during registration | email={user.email} | error={e}")
         raise HTTPException(status_code=500, detail="Internal server error")
