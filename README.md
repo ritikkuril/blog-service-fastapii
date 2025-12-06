@@ -5,12 +5,11 @@
 [![Traceability](https://img.shields.io/badge/Traceability-100%25-success?style=for-the-badge)](#traceability-matrix)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-A **production-ready** blog backend with user authentication, ownership control, pagination, full testing & **100% requirement traceability**.
+A **production-ready** blog backend with user authentication,full testing & **100% requirement traceability**.
 
 ## Features
 - Register / Login with JWT authentication
-- CRUD blog posts (owner-only update/delete)
-- Public post listing with pagination
+- CRUD blog posts (update/delete)
 - Auto-generated Swagger UI & ReDoc
 - Proper HTTP status codes & error handling
 - 100% test coverage + traceability matrix
